@@ -6,8 +6,8 @@
      
       <h1>Shopping List</h1>
       <p>Get it done today</p>
-      <input id="userinput"  type="text" placeholder="enter items">
-      <button id="enter" onclick="addListAfterClick()">Enter</button>
+      <input id="userinput"  type="text" placeholder="enter items" onkeypress="handle(event)">
+      <button id="enter" onclick="addListAfterClick()" >Enter</button>
       <ul id="myul">
          <li>Notebook  <button onclick="deleteLi(this)">delete</button></li>
          <li>Jello <button onclick="deleteLi(this)">delete</button></li>
@@ -18,6 +18,12 @@
       </ul>
       
       <script>
+         function handle(e){
+            if(e.keyCode === 13){
+               console.log("hello")
+               addListAfterClick()
+            }
+         }
          function deleteLi(e){
             e.parentElement.remove();
          }
