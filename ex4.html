@@ -35,6 +35,13 @@
             // var input = document.getElementById("userinput");
             // var ul = document.getElementsByTagName("ul")[0];
             // ul.innerHTML += input.value
+            var delete_btn = document.createElement("button")
+            delete_btn.onclick = function () {
+               this.parentNode.remove()
+            }
+            var btn_txt = document.createTextNode("Delete")
+            delete_btn.appendChild(btn_txt)
+            li.appendChild(delete_btn)
          }
 
       </script>
